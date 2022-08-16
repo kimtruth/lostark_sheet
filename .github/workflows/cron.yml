@@ -16,6 +16,8 @@ jobs:
       run: |
         echo ${{ secrets.APP_PY }} | base64 -d > app.py
         echo ${{ secrets.TOKEN }} | base64 -d > token.json
+        echo ${{ secrets.CRON }} > cron.sh
+        chmod +x ./cron.sh
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -23,3 +25,4 @@ jobs:
     - name: run
       run: |
         python app.py
+        ./cron.sh
