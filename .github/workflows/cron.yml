@@ -26,6 +26,5 @@ jobs:
       env: 
         TZ: 'Asia/Seoul'
       run: |
-        sudo timedatectl set-timezone 'Asia/Seoul'
         python app.py
         ./cron.sh
