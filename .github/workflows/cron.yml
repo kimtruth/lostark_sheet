@@ -26,6 +26,6 @@ jobs:
       continue-on-error: true
       env: 
         TZ: 'Asia/Seoul'
-      run: |
-        python app.py
-        ./cron.sh
+      run: python app.py
+    - name: trigger
+      run: ./cron.sh
